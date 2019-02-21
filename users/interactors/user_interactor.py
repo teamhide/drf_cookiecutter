@@ -2,14 +2,14 @@ import inject
 from typing import List
 from users.entities import UserEntity
 from users.repositories import UserRepository
-from projects.converters import InteractorConverter
+from projects.converters import UserInteractorConverter
 
 
 class UserInteractor:
     @inject.autoparams()
     def __init__(self, user_repository: UserRepository):
         self.repository = user_repository
-        self.converter = InteractorConverter()
+        self.converter = UserInteractorConverter()
 
 
 class CreateUserInteractor(UserInteractor):

@@ -3,7 +3,7 @@ from typing import List, Union, NoReturn
 from users.models.mongo import User
 from users.entities import UserEntity
 from projects.exceptions import NotFoundException
-from projects.converters import RepositoryConverter
+from projects.converters import UserRepositoryConverter
 
 
 class UserRepository:
@@ -28,7 +28,7 @@ class UserRepository:
 
 class UserMongoRepository(UserRepository):
     def __init__(self):
-        self.converter = RepositoryConverter()
+        self.converter = UserRepositoryConverter()
 
     def _find_user(self, user_id: int) -> User:
         """Return User model(private)"""
