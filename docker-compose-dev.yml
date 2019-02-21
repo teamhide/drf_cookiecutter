@@ -1,0 +1,53 @@
+version: '3.7'
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    container_name: nginx
+    hostname: nginx
+    ports:
+      - '80:80'
+    networks:
+      - backend
+    restart: on-failure
+    links:
+      - web_service
+    depends_on:
+      - web_service
+
+  web_service:
+    build:
+      context: .
+      dockerfile: docker/web-dev/Dockerfile
+    container_name: web_service
+    hostname: web_service
+    ports:
+      - '8000:8000'
+    networks:
+      - backend
+    tty: true
+    depends_on:
+      - mongodb
+    links:
+      - mongodb
+    volumes:
+      - $PWD:/home
+    env_file:
+      - docker/env/dev.env
+
+  mongodb:
+    build:
+      context: .
+      dockerfile: docker/mongodb/Dockerfile
+    container_name: mongodb
+    hostname: mongodb
+    ports:
+      - '27017:27017'
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: 'bridge'

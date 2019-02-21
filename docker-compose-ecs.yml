@@ -1,0 +1,38 @@
+version: "3"
+services:
+  web_service:
+    image: your_ecr_url
+    ports:
+      - "8000:8000"
+    links:
+      - mongodb
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: web_service
+        awslogs-region: ap-northeast-2
+        awslogs-stream-prefix: web_service
+
+  nginx:
+    image: your_ecr_url
+    ports:
+      - "80:80"
+    links:
+      - web_service
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: nginx
+        awslogs-region: ap-northeast-2
+        awslogs-stream-prefix: nginx
+
+  mongodb:
+    image: your_ecr_url
+    ports:
+      - "27017:27017"
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: mongodb
+        awslogs-region: ap-northeast-2
+        awslogs-stream-prefix: mongodb

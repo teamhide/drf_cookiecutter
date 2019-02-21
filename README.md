@@ -6,3 +6,4 @@
 - djangorestframework
 - Dependency Injection(inject)
 - MongoEngine
+- docker-compose(django + nginx + supervisor + nginx + mongodb)

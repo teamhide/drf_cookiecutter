@@ -1,0 +1,12 @@
+version: 1
+task_definition:
+  services:
+    web_service:
+      cpu_shares: 100
+      mem_limit: 208435456
+    nginx:
+      cpu_shares: 100
+      mem_limit: 208435456
+    mongodb:
+      cpu_shares: 100
+      mem_limit: 208435456
