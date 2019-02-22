@@ -2,19 +2,19 @@ import inject
 from typing import List
 from users.entities import UserEntity
 from users.repositories import UserRepository
-from projects.converters import UserInteractorConverter
+from projects.converters import Converter
 
 
 class UserInteractor:
     @inject.autoparams()
     def __init__(self, user_repository: UserRepository):
         self.repository = user_repository
-        self.converter = UserInteractorConverter()
+        self.converter = Converter()
 
 
 class CreateUserInteractor(UserInteractor):
     def execute(self, request: dict) -> UserEntity:
-        user_entity = self.converter.request_to_entity(request=request)
+        user_entity = self.converter.request_to_entity(request=request, entity=UserEntity)
         return self.repository.save_user(entity=user_entity)
 
 
