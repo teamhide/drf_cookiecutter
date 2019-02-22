@@ -27,3 +27,9 @@ class InvalidRequestType(BaseAPIException):
     status_code = 405
     default_code = 'invalid_request_type'
     default_detail = 'invalid request type'
+
+
+class AlreadyExistException(BaseAPIException):
+    status_code = 400
+    default_code = 'already_exist'
+    default_detail = 'resource already exist'
