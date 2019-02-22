@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caa936b7-25f8-4ebe-bb00-146edfe2491e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/interactors/auth_interactor.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth/interactors/auth_interactor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/converters/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/converters/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects/converters/user_converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/converters/user_converter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/interactors/user_interactor.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/interactors/user_interactor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/repositories/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/repositories/user_repository.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,10 +16,13 @@
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/projects/converters/user_converter.py">
+            <entry file="file://$PROJECT_DIR$/projects/converters/__init__.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="41" lean-forward="true" selection-start-column="41" selection-end-column="41" />
+                <state relative-caret-position="595">
+                  <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -40,18 +40,6 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/users/interactors/user_interactor.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="17" column="60" lean-forward="true" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
-                  <folding>
-                    <element signature="e#0#13#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/users/repositories/user_repository.py">
               <provider selected="true" editor-type-id="text-editor">
@@ -92,7 +80,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/users/serializers/__init__.py" />
         <option value="$PROJECT_DIR$/users/converters/__init__.py" />
         <option value="$PROJECT_DIR$/users/converters/user_converter.py" />
         <option value="$PROJECT_DIR$/users/models/mongo/user_model.py" />
@@ -143,6 +130,7 @@
         <option value="$PROJECT_DIR$/auth/interactors/auth_interactor.py" />
         <option value="$PROJECT_DIR$/users/repositories/user_repository.py" />
         <option value="$PROJECT_DIR$/projects/converters/user_converter.py" />
+        <option value="$PROJECT_DIR$/projects/converters/__init__.py" />
       </list>
     </option>
   </component>
@@ -168,19 +156,13 @@
             <path>
               <item name="clean" type="b2602c69:ProjectViewProjectNode" />
               <item name="clean" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
+              <item name="projects" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="clean" type="b2602c69:ProjectViewProjectNode" />
               <item name="clean" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-              <item name="interactors" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="clean" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clean" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-              <item name="repositories" type="462c0819:PsiDirectoryNode" />
+              <item name="projects" type="462c0819:PsiDirectoryNode" />
+              <item name="converters" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -233,7 +215,7 @@
     <frame x="0" y="23" width="2560" height="1332" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09531312" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09531312" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="aws.explorer" order="3" side_tool="true" />
@@ -247,7 +229,7 @@
       <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.21854839" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.21854839" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -255,20 +237,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/docker/config/supervisor-prod.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="118" selection-start-line="25" selection-start-column="118" selection-end-line="25" selection-end-column="118" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker/web-prod/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docker/mongodb/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -606,10 +574,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/auth/interactors/auth_interactor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/users/interactors/user_interactor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="60" lean-forward="true" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+        <state relative-caret-position="340">
+          <caret line="20" column="33" lean-forward="true" selection-end-line="28" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -626,17 +601,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auth/interactors/auth_interactor.py">
+    <entry file="file://$PROJECT_DIR$/users/interactors/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/converters/user_converter.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/converters/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="41" lean-forward="true" selection-start-column="41" selection-end-column="41" />
+        <state relative-caret-position="595">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
