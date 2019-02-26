@@ -2,8 +2,9 @@ import abc
 from typing import List, Union, NoReturn
 from users.models.mongo import User
 from users.entities import UserEntity
-from projects.exceptions import NotFoundException
+from projects.exceptions import NotFoundException, AlreadyExistException
 from projects.converters import Converter
+import mongoengine
 
 
 class UserRepository:
@@ -55,11 +56,14 @@ class UserMongoRepository(UserRepository):
         return user_entity
 
     def save_user(self, entity: UserEntity) -> UserEntity:
-        """Convert User entity to model"""
-        user_model = self.converter.entity_to_model(entity=entity, model=User)
+        try:
+            """Convert User entity to model"""
+            user_model = self.converter.entity_to_model(entity=entity, model=User)
 
-        """Save converted User model"""
-        user_model.save()
+            """Save converted User model"""
+            user_model.save()
 
-        """Convert User model to entity and return"""
-        return self.converter.model_to_entity(model=user_model, entity=UserEntity)
+            """Convert User model to entity and return"""
+            return self.converter.model_to_entity(model=user_model, entity=UserEntity)
+        except mongoengine.errors.NotUniqueError:
+            raise AlreadyExistException

@@ -16,6 +16,7 @@ env.bak/
 venv.bak/
 
 # IntelliJ project files
+.idea/
 .idea
 *.iml
 out

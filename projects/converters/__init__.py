@@ -2,6 +2,7 @@ from django.http.request import QueryDict
 from rest_framework.request import Request
 from rest_framework.utils.serializer_helpers import ReturnDict
 from projects.exceptions import InvalidRequestType
+from board.models.mongo import Comment
 
 
 class Converter:
@@ -20,6 +21,11 @@ class Converter:
         model_dict = dict(**model._data)
         if 'id' in model_dict:
             model_dict.pop('id')
+        if 'comments' in model_dict:
+            comment_dict = []
+            for comment in model_dict['comments']:
+                comment_dict.append(self._comment_to_dict(comment=comment))
+            model_dict['comments'] = comment_dict
         return entity(**model_dict)
 
     def request_to_entity(self, request, entity):
@@ -33,3 +39,8 @@ class Converter:
             return entity(**request)
         else:
             raise InvalidRequestType
+
+    def _comment_to_dict(self, comment: Comment):
+        from board.serializers import CommentSerializer
+        comment = CommentSerializer(comment)
+        return comment.data
