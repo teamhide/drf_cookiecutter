@@ -8,7 +8,8 @@ Have to change below things
 - WEB image url
 """
 
-class BaseConfig(object):
+
+class BaseConfig:
     BASE = {'region': 'ap-northeast-2',
             'cluster': 'CLUSTER_NAME_HERE',
             'task_family': 'TASK_FAMILY_HERE',
