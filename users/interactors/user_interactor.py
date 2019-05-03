@@ -2,6 +2,7 @@ import inject
 from typing import List
 from users.entities import UserEntity
 from users.repositories import UserRepository
+from users.dtos import CreateUserDto
 from projects.converters import Converter
 
 
@@ -13,8 +14,8 @@ class UserInteractor:
 
 
 class CreateUserInteractor(UserInteractor):
-    def execute(self, request: dict) -> UserEntity:
-        user_entity = self.converter.request_to_entity(request=request, entity=UserEntity)
+    def execute(self, dto: CreateUserDto) -> UserEntity:
+        user_entity = self.converter.request_to_entity(request=dto, entity=UserEntity)
         return self.repository.save_user(entity=user_entity)
 
 

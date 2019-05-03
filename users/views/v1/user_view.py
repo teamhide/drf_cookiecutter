@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from users.serializers import UserSerializer, UserResponseSerializer
 from users.interactors import CreateUserInteractor, GetUserInteractor, UserListInteractor
+from users.dtos import CreateUserDto
 
 
 class User(APIView):
@@ -28,7 +29,7 @@ class UserList(APIView):
         """Create User"""
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
-            user = CreateUserInteractor().execute(request=serializer.data)
+            user = CreateUserInteractor().execute(dto=CreateUserDto(**serializer.data))
             response = UserResponseSerializer(user).data
             return Response(status=status.HTTP_200_OK, data=response)
         else:

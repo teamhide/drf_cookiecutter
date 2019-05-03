@@ -1,7 +1,5 @@
 import inject
-from typing import List
 from rest_framework.utils.serializer_helpers import ReturnDict
-from auth.entities import AuthEntity
 from users.repositories import UserRepository
 from projects.converters import Converter
 
