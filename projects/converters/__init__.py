@@ -4,12 +4,14 @@ class Converter:
             cls.instance = super(Converter, cls).__new__(cls)
         return cls.instance
 
-    def _remove_id_from_entity(self, entity):
+    @staticmethod
+    def _remove_id_from_entity(entity):
         if 'id' in entity:
             entity.pop('id')
         return entity
 
-    def _remove_none_from_dict(self, obj) -> dict:
+    @staticmethod
+    def _remove_none_from_dict(obj) -> dict:
         return dict(filter(lambda x: x[1], obj.items()))
 
     def _model_to_entity(self, model, entity):

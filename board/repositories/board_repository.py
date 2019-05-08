@@ -4,7 +4,7 @@ from typing import List, Union, NoReturn
 from users.models.mongo import User
 from board.models.mongo import Article, Comment
 from board.entities import ArticleEntity, CommentEntity
-from projects.exceptions import NotFoundException, AlreadyExistException
+from projects.exceptions import NotFoundException
 from projects.converters import Converter
 
 
@@ -45,9 +45,10 @@ class BoardMongoRepository(BoardRepository):
 
     def get_article_list(self) -> List[ArticleEntity]:
         articles = Article.objects.all()
-        article_entity = []
-        for article in articles:
-            article_entity.append(self.converter.model_to_entity(model=article, entity=ArticleEntity))
+        article_entity = [
+            self.converter.model_to_entity(model=article, entity=ArticleEntity)
+            for article in articles
+        ]
         return article_entity
 
     def save_article(self, entity: ArticleEntity) -> Union[ArticleEntity, NoReturn]:

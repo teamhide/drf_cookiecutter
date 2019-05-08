@@ -4,7 +4,8 @@ from projects.converters import Converter
 
 
 class UserInteractorConverter(Converter):
-    def user_dto_to_entity(self, dto) -> UserEntity:
+    @staticmethod
+    def user_dto_to_entity(dto) -> UserEntity:
         return UserEntity(**dto.__dict__)
 
 

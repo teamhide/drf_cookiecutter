@@ -21,7 +21,7 @@ class CreateArticleInteractor(BoardInteractor):
 
 class GetArticleInteractor(BoardInteractor):
     def execute(self, no: int) -> ArticleEntity:
-        return self.repository.get_user(user_id=no)
+        return self.repository.get_article(article_id=no)
 
 
 class ArticleListInteractor(BoardInteractor):

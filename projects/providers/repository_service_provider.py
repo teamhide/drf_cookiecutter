@@ -3,6 +3,7 @@ from board.repositories import BoardRepository, BoardMongoRepository
 
 
 class RepositoryServiceProvider:
-    def inject(self, binder):
+    @staticmethod
+    def inject(binder):
         binder.bind_to_provider(UserRepository, UserMongoRepository)
         binder.bind_to_provider(BoardRepository, BoardMongoRepository)

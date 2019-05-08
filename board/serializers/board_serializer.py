@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from projects.serializers import BaseSerializer
-from users.serializers import UserSerializer
 
 
 class CommentSerializer(BaseSerializer):

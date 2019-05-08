@@ -3,7 +3,12 @@ from projects.exceptions import UnknownFieldException
 
 
 class BaseSerializer(serializers.Serializer):
-    """Check if unknown field exists"""
+    def create(self, validated_data):
+        pass
+
+    def update(self, instance, validated_data):
+        pass
+
     def validate(self, attrs):
         unknown = set(self.initial_data) - set(self.fields)
         if unknown:

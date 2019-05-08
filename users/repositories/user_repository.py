@@ -26,6 +26,10 @@ class UserRepository:
     def save_user(self, entity: UserEntity) -> UserEntity:
         raise NotImplementedError
 
+    @abc.abstractmethod
+    def update_user(self, user_id: int, query: dict) -> None:
+        raise NotImplementedError
+
 
 class UserMongoRepository(UserRepository):
     def __init__(self):
@@ -50,9 +54,10 @@ class UserMongoRepository(UserRepository):
         users = User.objects.all()
 
         """Convert each user to entity"""
-        user_entity = []
-        for user in users:
-            user_entity.append(self.converter.model_to_entity(model=user, entity=UserEntity))
+        user_entity = [
+            self.converter.model_to_entity(model=user, entity=UserEntity)
+            for user in users
+        ]
         return user_entity
 
     def save_user(self, entity: UserEntity) -> UserEntity:
@@ -67,3 +72,7 @@ class UserMongoRepository(UserRepository):
             return self.converter.model_to_entity(model=user_model, entity=UserEntity)
         except mongoengine.errors.NotUniqueError:
             raise AlreadyExistException
+
+    def update_user(self, user_id: int, query: dict) -> None:
+        user = self._find_user(user_id=user_id)
+        user.update(**query)
